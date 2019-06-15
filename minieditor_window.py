@@ -1,0 +1,91 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'minieditor.ui'
+#
+# Created by: PyQt5 UI code generator 5.9.2
+#
+# WARNING! All changes made in this file will be lost!
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(800, 600)
+        MainWindow.setAutoFillBackground(False)
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.verticalLayoutWidget = QtWidgets.QWidget(self.centralwidget)
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(0, 0, 801, 561))
+        self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
+        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.mainEdit = QtWidgets.QTextEdit(self.verticalLayoutWidget)
+        font = QtGui.QFont()
+        font.setPointSize(11)
+        self.mainEdit.setFont(font)
+        self.mainEdit.setStyleSheet("")
+        self.mainEdit.setFrameShape(QtWidgets.QFrame.Box)
+        self.mainEdit.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.mainEdit.setLineWidth(0)
+        self.mainEdit.setObjectName("mainEdit")
+        self.verticalLayout.addWidget(self.mainEdit)
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 21))
+        self.menubar.setObjectName("menubar")
+        self.menu = QtWidgets.QMenu(self.menubar)
+        self.menu.setTearOffEnabled(False)
+        self.menu.setSeparatorsCollapsible(False)
+        self.menu.setObjectName("menu")
+        self.menu_2 = QtWidgets.QMenu(self.menubar)
+        self.menu_2.setObjectName("menu_2")
+        MainWindow.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        self.statusbar.setObjectName("statusbar")
+        MainWindow.setStatusBar(self.statusbar)
+        self.actionSave_as = QtWidgets.QAction(MainWindow)
+        self.actionSave_as.setObjectName("actionSave_as")
+        self.actionexit = QtWidgets.QAction(MainWindow)
+        self.actionexit.setObjectName("actionexit")
+        self.actionnew = QtWidgets.QAction(MainWindow)
+        self.actionnew.setObjectName("actionnew")
+        self.actionUndo = QtWidgets.QAction(MainWindow)
+        self.actionUndo.setObjectName("actionUndo")
+        self.actionRedo = QtWidgets.QAction(MainWindow)
+        self.actionRedo.setObjectName("actionRedo")
+        self.actionFont = QtWidgets.QAction(MainWindow)
+        self.actionFont.setObjectName("actionFont")
+        self.actionsave_as_html = QtWidgets.QAction(MainWindow)
+        self.actionsave_as_html.setObjectName("actionsave_as_html")
+        self.menu.addAction(self.actionnew)
+        self.menu.addAction(self.actionSave_as)
+        self.menu.addAction(self.actionsave_as_html)
+        self.menu.addAction(self.actionexit)
+        self.menu_2.addAction(self.actionUndo)
+        self.menu_2.addAction(self.actionRedo)
+        self.menu_2.addAction(self.actionFont)
+        self.menubar.addAction(self.menu.menuAction())
+        self.menubar.addAction(self.menu_2.menuAction())
+
+        self.retranslateUi(MainWindow)
+        self.actionexit.triggered.connect(MainWindow.close)
+        self.actionRedo.triggered.connect(self.mainEdit.redo)
+        self.actionUndo.triggered.connect(self.mainEdit.undo)
+        self.actionnew.triggered.connect(self.mainEdit.clear)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "ミニエディター"))
+        self.menu.setTitle(_translate("MainWindow", "ファイル"))
+        self.menu_2.setTitle(_translate("MainWindow", "編集"))
+        self.actionSave_as.setText(_translate("MainWindow", "名前をつけて保存.."))
+        self.actionexit.setText(_translate("MainWindow", "終了"))
+        self.actionnew.setText(_translate("MainWindow", "新規作成"))
+        self.actionUndo.setText(_translate("MainWindow", "Undo"))
+        self.actionRedo.setText(_translate("MainWindow", "Redo"))
+        self.actionFont.setText(_translate("MainWindow", "フォント選択.."))
+        self.actionsave_as_html.setText(_translate("MainWindow", "HTMLで保存.."))
+
